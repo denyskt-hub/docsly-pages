@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Docsly</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; color: #1c1c1e; background: #fff; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; }
+  .home { font-size: .95rem; margin: 0 0 1.5rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid rgba(128,128,128,.2); }
+  .updated { color: #6b6b70; font-size: .9rem; }
+  .lede { font-size: 1.05rem; }
+  a { color: #0060df; }
+  ul { padding-left: 1.2rem; }
+  code { background: #f1f1f1; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  td, th { border: 1px solid #ddd; padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  th { background: #f7f7f7; }
+  footer { margin-top: 3rem; color: #6b6b70; font-size: .85rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6ea; background: #14161b; }
+    a { color: #4da6ff; }
+    code { background: #262626; }
+    th { background: #1f1f1f; }
+    td, th { border-color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="home"><a href="./">← Docsly</a></p>
+<p class="updated">Last updated: 20 July 2026</p>
+
+<p class="lede">Docsly is a document vault. Your documents are encrypted on your device, the
+encryption key never leaves it, and we operate no server that could receive them. We do collect
+anonymous usage and crash data, and this policy explains exactly what that is.</p>
+
+<h2>1. Your documents</h2>
+
+<p>Everything you store in Docsly — files, scans, photos, folder and tag names — stays on your
+device, encrypted at rest (AES-256). The key is held in the platform's secure storage: the Android
+KeyStore or the iOS Keychain, marked device-only. We have no access to it and no way to decrypt your
+vault.</p>
+
+<p>We do not operate a backend. There is no Docsly account, no sign-up, no email address, no
+profile. The app never uploads your documents anywhere on its own.</p>
+
+<h2>2. Cloud backup — only when you ask</h2>
+
+<p>You can create an encrypted backup from Settings. When you do:</p>
+
+<ul>
+  <li>You choose a passphrase (minimum 8 characters). The archive is encrypted with it before it
+      leaves the device, using AES-256-GCM with a PBKDF2-derived key.</li>
+  <li>The encrypted archive goes to <strong>your own</strong> cloud storage — iCloud on iOS, or a
+      private per-app folder in your Google Drive on Android. It never passes through us.</li>
+  <li>We cannot read it. If you lose the passphrase, neither can we — there is no recovery.</li>
+</ul>
+
+<p>Backup is never automatic. On Android the app also sets <code>allowBackup="false"</code>, so your
+vault is excluded from the operating system's own automatic cloud backup.</p>
+
+<h2>3. What we do collect</h2>
+
+<p>Docsly uses Google Firebase for anonymous product analytics, crash reporting, and remote
+configuration. This is the only data that leaves your device without you initiating it.</p>
+
+<table>
+  <tr><th>Service</th><th>What it collects</th><th>Why</th></tr>
+  <tr>
+    <td>Firebase Analytics</td>
+    <td>Anonymous usage events: which screens are opened, that a folder or document was created or
+        deleted, whether a backup succeeded, which settings were toggled. Event details are
+        shape-only — file type, file extension, size in bytes.</td>
+    <td>To understand which features are used and where people get stuck.</td>
+  </tr>
+  <tr>
+    <td>Firebase Crashlytics</td>
+    <td>Crash reports and non-fatal error records: stack traces, device model, OS version.</td>
+    <td>To find and fix crashes.</td>
+  </tr>
+  <tr>
+    <td>Firebase Remote Config</td>
+    <td>Fetches configuration values from Google. Sends no usage data.</td>
+    <td>To adjust app limits without shipping an update.</td>
+  </tr>
+</table>
+
+<p>Firebase assigns a randomly generated app-instance identifier so events from one installation can
+be counted together. It is not linked to your identity, and deleting the app resets it. Docsly does
+<strong>not</strong> use the advertising identifier (IDFA/AAID) — the ad-identifier component is not
+built into the app at all.</p>
+
+<h2>4. What analytics never contains</h2>
+
+<p>This matters more than usual for an app like this one, so it is worth being explicit. Analytics
+and crash reports never include:</p>
+
+<ul>
+  <li>document contents, or any part of a file;</li>
+  <li>file names, folder names, or tag names;</li>
+  <li>your PIN, passphrase, or biometric data;</li>
+  <li>any indication of which vault you were using.</li>
+</ul>
+
+<p>That last point is deliberate. Docsly supports a decoy PIN that opens a separate vault. Events
+carry no vault identifier and counts are never split between the real and decoy vaults, so the
+analytics data cannot reveal that a hidden vault exists — including to us.</p>
+
+<h2>5. Advertising and tracking</h2>
+
+<p>Docsly contains no advertising, no ad networks, and no attribution or marketing SDKs. We do not
+track you across other apps or websites, and we do not sell or share your data with anyone. Nothing
+we collect is used for advertising.</p>
+
+<h2>6. Permissions</h2>
+
+<table>
+  <tr><th>Permission</th><th>Used for</th></tr>
+  <tr><td>Camera</td><td>Scanning documents. Scanning runs entirely on your device; frames are
+      never uploaded.</td></tr>
+  <tr><td>Photo library</td><td>Importing images you pick, and saving documents you export. Access
+      is limited to what you select.</td></tr>
+  <tr><td>Face ID / biometrics</td><td>Unlocking the vault. Biometric data stays with the operating
+      system — Docsly only receives a yes or no.</td></tr>
+</table>
+
+<p>Docsly requests no location, contacts, microphone, or health permissions.</p>
+
+<h2>7. Third parties</h2>
+
+<p>Google is our only data processor, through the Firebase services listed above. Their handling of
+that data is governed by
+<a href="https://firebase.google.com/support/privacy">Firebase's privacy documentation</a> and
+<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+<p>If you use Google Drive backup on Android, you sign in with your own Google account and the
+archive is stored under your account. That storage is governed by Google's terms, not ours.</p>
+
+<h2>8. Your data, and deleting it</h2>
+
+<ul>
+  <li><strong>Documents:</strong> delete them individually in the app, or uninstall Docsly to remove
+      everything. Because there is no server copy, uninstalling is complete deletion.</li>
+  <li><strong>Backups:</strong> delete them from your own iCloud or Google Drive. On Android you can
+      also revoke Docsly's Drive access from your Google account settings at any time.</li>
+  <li><strong>Analytics and crash data:</strong> email us and we will delete the data associated
+      with your installation.</li>
+</ul>
+
+<h2>9. Children</h2>
+
+<p>Docsly is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+<h2>10. Changes</h2>
+
+<p>If this policy changes we will update the date at the top of this page. Material changes will
+also be noted in the app's release notes.</p>
+
+<h2>11. Contact</h2>
+
+<p>Questions about this policy, or a data deletion request: reach us from Settings → Contact Us in
+the app, or by email at <a href="mailto:denyskt.hub@icloud.com">denyskt.hub@icloud.com</a>
+(iOS) / <a href="mailto:igor.gasenko@gmail.com">igor.gasenko@gmail.com</a> (Android).</p>
+
+<footer>© 2026 Denys Kotenko · Docsly</footer>
+
+</body>
+</html>
