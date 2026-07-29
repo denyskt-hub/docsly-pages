@@ -42,10 +42,16 @@ collect anonymous usage and crash data, and this policy explains exactly what th
 
 <h2>1. Your documents</h2>
 
-<p>Everything you store in Docsly — files, scans, photos, folder and tag names — stays on your
-device, encrypted at rest (AES-256). The key is held in the platform's secure storage: the Android
-KeyStore or the iOS Keychain, marked device-only. We have no access to it and no way to decrypt your
-vault.</p>
+<p>Everything you store in Docsly stays on your device. The contents of your documents — files,
+scans, photos, the pages inside a document — are encrypted at rest (AES-256). The key is held in the
+platform's secure storage: the Android KeyStore or the iOS Keychain, marked device-only. We have no
+access to it and no way to decrypt your documents.</p>
+
+<p>To be precise about the rest: document names, folder names, tag names and the small preview
+thumbnails are stored on your device too, but they are protected by the operating system's own file
+protection rather than by the App's encryption. They are not readable by other apps, and they are
+excluded from unencrypted device backups — but they are not part of the AES-256 layer above. We
+would rather state this than let "encrypted" stand for more than it does.</p>
 
 <p>We do not operate a backend. There is no Docsly account, no sign-up, no email address, no
 profile. The app never uploads your documents anywhere on its own.</p>
