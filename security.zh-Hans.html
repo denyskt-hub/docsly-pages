@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安全性 — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>安全性</h1>
+  <p class="sub">Docsly 如何保护你的文稿</p>
+  <p class="upd">更新日期：2026年8月2日</p>
+  <h2>哪些内容被加密</h2>
+  <p>文稿<em>内容</em>在你的设备上使用 AES-256-GCM 加密。文稿名称、文件夹名称和其他元数据不加密，它们以明文形式存放在应用的本地数据库中。我们把这一点说清楚：一个声称加密一切却做不到的保险库，不如一个告诉你边界在哪里的保险库。</p>
+  <h2>密钥保存在哪里</h2>
+  <p>加密密钥在你的设备上生成，保存在 iOS Keychain 或 Android KeyStore 中。它不会离开设备，不会写入备份归档，也不会发送给我们——根本没有可发送的去处。</p>
+  <h2>备份</h2>
+  <p>备份在上传之前，先在你的设备上用你设定的口令加密。密钥通过 PBKDF2 迭代 600,000 次派生，归档格式为 <code>DOCSP2</code>。没有这个口令，任何人都打不开该归档，我们也不例外。口令一旦丢失，备份将无法恢复——这是刻意的设计，不是疏漏。</p>
+  <h2>没有服务器，没有账户</h2>
+  <p>Docsly 没有账户，也没有后端。你的文稿不会到达我们这里。备份到 Google Drive 或 iCloud 时，你是在用自己的账户写入自己的存储空间；我们只能看到你让应用指向的那部分。</p>
+  <h2>源代码</h2>
+  <p>Docsly 不是开源软件。我们改为公开这个页面，让真正重要的部分——加密算法、密钥派生、密钥存放位置、哪些数据离开设备——可以被阅读和检验，而不必只听我们的说法。</p>
+</main>
+</body>
+</html>

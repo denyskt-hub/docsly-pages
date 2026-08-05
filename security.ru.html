@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Безопасность — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>Безопасность</h1>
+  <p class="sub">Как Docsly защищает ваши документы</p>
+  <p class="upd">Обновлено: 2 августа 2026</p>
+  <h2>Что зашифровано</h2>
+  <p><em>Содержимое</em> документов шифруется на устройстве алгоритмом AES-256-GCM. Имена документов, названия папок и прочие метаданные — нет: они лежат в локальной базе приложения в открытом виде. Мы говорим это прямо, потому что сейф, который заявляет о шифровании всего и не делает этого, хуже того, который честно показывает границу.</p>
+  <h2>Где хранятся ключи</h2>
+  <p>Ключ шифрования создаётся на вашем устройстве и хранится в iOS Keychain или Android KeyStore. Он не покидает устройство, никогда не попадает в архив резервной копии и не отправляется нам — отправлять его попросту некуда.</p>
+  <h2>Резервные копии</h2>
+  <p>Копия шифруется выбранным вами паролем на устройстве, до какой-либо выгрузки. Ключ выводится через PBKDF2 с 600 000 итераций, формат архива — <code>DOCSP2</code>. Без этого пароля архив не откроет никто, включая нас. Потеряете пароль — копию не восстановить; это задуманное свойство, а не недосмотр.</p>
+  <h2>Ни сервера, ни аккаунта</h2>
+  <p>У Docsly нет учётных записей и нет серверной части. Ваши документы к нам не попадают. Копия в Google Drive или iCloud пишется в ваше собственное хранилище под вашей учётной записью.</p>
+  <h2>Исходный код</h2>
+  <p>Docsly не с открытым исходным кодом. Вместо этого мы публикуем эту страницу, чтобы то, что важно — шифр, вывод ключа, место хранения ключей, что покидает устройство — можно было прочитать и оценить, не веря нам на слово.</p>
+</main>
+</body>
+</html>

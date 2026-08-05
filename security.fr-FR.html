@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sécurité — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>Sécurité</h1>
+  <p class="sub">Comment Docsly protège vos documents</p>
+  <p class="upd">Mis à jour : 2 août 2026</p>
+  <h2>Ce qui est chiffré</h2>
+  <p>Le <em>contenu</em> des documents est chiffré sur votre appareil avec AES-256-GCM. Les noms de documents, les noms de dossiers et les autres métadonnées ne le sont pas : ils sont stockés en clair dans la base de données locale de l'application. Nous le disons franchement, car un coffre qui prétend chiffrer l'intégralité des données sans le faire vaut moins qu'un coffre qui vous montre où passe la limite.</p>
+  <h2>Où sont les clés</h2>
+  <p>La clé de chiffrement est générée sur votre appareil et conservée dans le Keychain d'iOS ou le KeyStore d'Android. Elle ne quitte jamais l'appareil, n'est jamais placée dans une archive de sauvegarde et ne nous est jamais transmise — il n'existe nulle part où l'envoyer.</p>
+  <h2>Sauvegardes</h2>
+  <p>Une sauvegarde est chiffrée avec une phrase secrète que vous choisissez, sur votre appareil, avant tout envoi. La clé est dérivée par PBKDF2 avec 600 000 itérations ; le format d'archive est <code>DOCSP2</code>. Sans cette phrase secrète, personne ne peut ouvrir l'archive, nous pas davantage. Si vous la perdez, la sauvegarde est irrécupérable — c'est la propriété recherchée, pas un oubli.</p>
+  <h2>Ni serveur, ni compte</h2>
+  <p>Docsly n'a ni comptes ni serveur. Vos documents ne nous parviennent jamais. Lorsque vous sauvegardez sur Google Drive ou iCloud, vous écrivez dans votre propre espace de stockage avec votre propre compte ; nous n'en voyons que les parties vers lesquelles vous dirigez l'application.</p>
+  <h2>Code source</h2>
+  <p>Docsly n'est pas open source. Nous publions cette page à la place, afin que l'essentiel — l'algorithme, la dérivation de clé, l'endroit où les clés sont conservées, ce qui quitte l'appareil — puisse être lu et jugé sans avoir à nous croire sur parole.</p>
+</main>
+</body>
+</html>

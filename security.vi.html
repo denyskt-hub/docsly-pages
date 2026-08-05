@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bảo mật — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>Bảo mật</h1>
+  <p class="sub">Docsly bảo vệ tài liệu của bạn như thế nào</p>
+  <p class="upd">Cập nhật: 2 tháng 8, 2026</p>
+  <h2>Những gì được mã hoá</h2>
+  <p><em>Nội dung</em> tài liệu được mã hoá ngay trên thiết bị của bạn bằng AES-256-GCM. Tên tài liệu, tên thư mục và các siêu dữ liệu khác thì không: chúng nằm ở dạng đọc được trong cơ sở dữ liệu cục bộ của ứng dụng. Chúng tôi nói thẳng điều này, vì một két sắt tuyên bố mã hoá mọi thứ mà thực tế không làm vậy còn tệ hơn một két sắt cho bạn biết ranh giới nằm ở đâu.</p>
+  <h2>Khoá được lưu ở đâu</h2>
+  <p>Khoá mã hoá được tạo trên thiết bị của bạn và giữ trong iOS Keychain hoặc Android KeyStore. Khoá không rời khỏi thiết bị, không bao giờ nằm trong tệp sao lưu và không bao giờ được gửi cho chúng tôi — không có nơi nào để gửi cả.</p>
+  <h2>Sao lưu</h2>
+  <p>Bản sao lưu được mã hoá bằng mật khẩu do bạn chọn, ngay trên thiết bị, trước khi bất cứ thứ gì được tải lên. Khoá được dẫn xuất bằng PBKDF2 với 600.000 vòng lặp; định dạng tệp là <code>DOCSP2</code>. Không có mật khẩu đó thì không ai mở được tệp, kể cả chúng tôi. Nếu bạn làm mất, bản sao lưu không thể khôi phục — đó là tính chất có chủ đích, không phải sơ suất.</p>
+  <h2>Không máy chủ, không tài khoản</h2>
+  <p>Docsly không có tài khoản và không có máy chủ. Tài liệu của bạn không bao giờ đến chỗ chúng tôi. Khi bạn sao lưu lên Google Drive hoặc iCloud, bạn đang ghi vào kho lưu trữ của chính bạn bằng tài khoản của chính bạn; chúng tôi chỉ thấy phần bạn trỏ ứng dụng tới.</p>
+  <h2>Mã nguồn</h2>
+  <p>Docsly không phải mã nguồn mở. Thay vào đó, chúng tôi công bố trang này để những điều quan trọng — thuật toán mã hoá, cách dẫn xuất khoá, nơi lưu khoá, dữ liệu nào rời khỏi thiết bị — có thể được đọc và đánh giá mà không cần tin lời chúng tôi.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Segurança — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>Segurança</h1>
+  <p class="sub">Como o Docsly protege seus documentos</p>
+  <p class="upd">Atualizado: 2 de agosto de 2026</p>
+  <h2>O que é criptografado</h2>
+  <p>O <em>conteúdo</em> dos documentos é criptografado no seu dispositivo com AES-256-GCM. Os nomes dos documentos, os nomes das pastas e os demais metadados não são: ficam legíveis no banco de dados local do app. Dizemos isso com todas as letras porque um cofre que afirma criptografar quaisquer dados, e não faz isso, é pior do que um que mostra onde está o limite.</p>
+  <h2>Onde ficam as chaves</h2>
+  <p>A chave de criptografia é gerada no seu dispositivo e guardada no Keychain do iOS ou no KeyStore do Android. Ela nunca sai do dispositivo, nunca entra em um arquivo de backup e nunca é enviada para nós — não há para onde enviá-la.</p>
+  <h2>Backups</h2>
+  <p>Um backup é criptografado com uma senha escolhida por você, no seu dispositivo, antes de qualquer envio. A chave é derivada com PBKDF2 em 600.000 iterações; o formato do arquivo é <code>DOCSP2</code>. Sem essa senha, ninguém consegue abrir o arquivo, nem nós. Se você perdê-la, o backup é irrecuperável — essa é a propriedade pretendida, não um descuido.</p>
+  <h2>Sem servidor, sem conta</h2>
+  <p>O Docsly não tem contas nem backend. Seus documentos nunca chegam até nós. Quando você faz backup no Google Drive ou no iCloud, está gravando no seu próprio armazenamento com a sua própria conta; nós só vemos as partes para as quais você aponta o app.</p>
+  <h2>Código-fonte</h2>
+  <p>O Docsly não é de código aberto. Em vez disso, publicamos esta página, para que o que importa — o algoritmo, a derivação da chave, onde as chaves ficam, o que sai do dispositivo — possa ser lido e avaliado sem precisar acreditar na nossa palavra.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keamanan — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>Keamanan</h1>
+  <p class="sub">Bagaimana Docsly melindungi dokumen Anda</p>
+  <p class="upd">Diperbarui: 2 Agustus 2026</p>
+  <h2>Apa yang dienkripsi</h2>
+  <p><em>Isi</em> dokumen dienkripsi di perangkat Anda dengan AES-256-GCM. Nama dokumen, nama folder, dan metadata lain tidak: semuanya tersimpan terbaca di basis data lokal aplikasi. Kami menyatakannya terus terang, karena brankas yang mengaku mengenkripsi segalanya padahal tidak, lebih buruk daripada brankas yang menunjukkan di mana batasnya.</p>
+  <h2>Di mana kunci disimpan</h2>
+  <p>Kunci enkripsi dibuat di perangkat Anda dan disimpan di iOS Keychain atau Android KeyStore. Kunci tidak pernah meninggalkan perangkat, tidak pernah dimasukkan ke dalam arsip cadangan, dan tidak pernah dikirim kepada kami — tidak ada tempat untuk mengirimnya.</p>
+  <h2>Cadangan</h2>
+  <p>Cadangan dienkripsi dengan frasa sandi pilihan Anda, di perangkat Anda, sebelum apa pun diunggah. Kuncinya diturunkan dengan PBKDF2 sebanyak 600.000 iterasi; format arsipnya <code>DOCSP2</code>. Tanpa frasa sandi itu, tidak seorang pun dapat membuka arsipnya, termasuk kami. Jika Anda kehilangannya, cadangan tidak dapat dipulihkan — itu sifat yang memang dikehendaki, bukan kelalaian.</p>
+  <h2>Tanpa server, tanpa akun</h2>
+  <p>Docsly tidak punya akun dan tidak punya backend. Dokumen Anda tidak pernah sampai ke kami. Saat Anda mencadangkan ke Google Drive atau iCloud, Anda menulis ke penyimpanan Anda sendiri dengan akun Anda sendiri; kami hanya melihat bagian yang Anda tunjukkan kepada aplikasi.</p>
+  <h2>Kode sumber</h2>
+  <p>Docsly bukan perangkat lunak sumber terbuka. Sebagai gantinya kami menerbitkan halaman ini, agar bagian yang penting — algoritme enkripsi, penurunan kunci, tempat kunci disimpan, apa yang keluar dari perangkat — dapat dibaca dan dinilai tanpa harus percaya begitu saja pada kami.</p>
+</main>
+</body>
+</html>

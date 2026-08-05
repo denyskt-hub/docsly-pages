@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>セキュリティ — Docsly</title>
+<style>:root{color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#fff;color:#1a1a1a}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .35rem}
+.sub{color:#5a5a5a;margin:0 0 .35rem}
+.upd{color:#8a8a8a;font-size:.85rem;margin:0 0 2.5rem}
+h2{font-size:1.15rem;margin:2.25rem 0 .5rem}
+p{margin:0 0 1rem}
+code{background:#f2f2f4;padding:.1em .35em;border-radius:4px;font-size:.9em}
+@media(prefers-color-scheme:dark){
+ body{background:#121214;color:#e8e8ea}
+ .sub{color:#a0a0a8}.upd{color:#77777f}code{background:#232327}
+}</style>
+</head>
+<body>
+<main>
+  <h1>セキュリティ</h1>
+  <p class="sub">Docsly が書類をどう保護するか</p>
+  <p class="upd">更新日: 2026年8月2日</p>
+  <h2>暗号化される範囲</h2>
+  <p>書類の<em>内容</em>は、お使いの端末上で AES-256-GCM により暗号化されます。書類名やフォルダ名などのメタデータは暗号化されず、アプリのローカルデータベースにそのまま保存されます。これを明示するのは、すべてを暗号化すると称して実際にはそうでない保管庫より、どこまでが対象かを示す保管庫のほうが誠実だからです。</p>
+  <h2>鍵の保管場所</h2>
+  <p>暗号鍵は端末上で生成され、iOS の Keychain または Android の KeyStore に保管されます。鍵が端末から出ることはなく、バックアップアーカイブに含まれることもなく、当方に送信されることもありません。送る先がそもそも存在しません。</p>
+  <h2>バックアップ</h2>
+  <p>バックアップは、アップロードの前に、お客様が決めたパスフレーズで端末上で暗号化されます。鍵は PBKDF2 を 600,000 回反復して導出し、アーカイブ形式は <code>DOCSP2</code> です。このパスフレーズがなければ、当方を含め誰もアーカイブを開けません。紛失した場合、バックアップは復元できません。これは見落としではなく、意図した性質です。</p>
+  <h2>サーバーもアカウントもありません</h2>
+  <p>Docsly にはアカウントもバックエンドもありません。書類が当方に届くことはありません。Google Drive や iCloud にバックアップするときは、お客様自身のアカウントで、お客様自身のストレージに書き込んでいます。当方が見るのは、アプリに指定した範囲だけです。</p>
+  <h2>ソースコード</h2>
+  <p>Docsly はオープンソースではありません。代わりにこのページを公開しています。暗号方式、鍵の導出、鍵の保管場所、端末から出るものといった要点を、当方の言葉を信じるほかない状態にせず、読んで判断できるようにするためです。</p>
+</main>
+</body>
+</html>
