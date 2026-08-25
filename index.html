@@ -8,6 +8,7 @@
 <meta property="og:title" content="Docsly: Encrypted Document Vault">
 <meta property="og:description" content="Every important document in one place, encrypted on your device. No account, no server, no cloud unless you ask for it.">
 <meta property="og:image" content="https://denyskt-hub.github.io/docsly-pages/assets/icon.png">
+<meta name="apple-itunes-app" content="app-id=6762974333">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -21,8 +22,9 @@
   h1 { font-size: 2.2rem; line-height: 1.2; margin: 20px 0 8px; }
   h1 .accent { color: #0a84ff; }
   .tagline { font-size: 1.15rem; color: #4b4b50; max-width: 580px; margin: 0 auto 24px; }
-  .soon { display: inline-block; font-weight: 600; font-size: .95rem; color: #10467e; background: rgba(10,132,255,.14);
-          border: 1px solid rgba(10,132,255,.45); border-radius: 999px; padding: 8px 18px; }
+  .badge { display: inline-block; line-height: 0; }
+  .badge img { height: 54px; width: auto; }
+  .also { color: #6b6b70; font-size: .9rem; margin: 14px 0 0; }
 
   section.features { padding: 40px 0 8px; }
   h2 { font-size: 1.5rem; text-align: center; margin: 24px 0 4px; }
@@ -49,7 +51,7 @@
     .tagline, .card p { color: #a6a6ad; }
     .card { background: rgba(10,132,255,.07); }
     h1 .accent { color: #4da6ff; }
-    .soon { color: #a8d5ff; background: rgba(10,132,255,.14); border-color: rgba(10,132,255,.4); }
+    .also { color: #a6a6ad; }
   }
 </style>
 </head>
@@ -60,10 +62,8 @@
     <img class="icon" src="assets/icon.png" alt="Docsly app icon" width="96" height="96">
     <h1>Every document that matters —<br><span class="accent">encrypted on your device</span></h1>
     <p class="tagline">Passports, contracts, insurance, warranties. Docsly keeps them in one vault, encrypted with AES-256. The key never leaves your phone, and there is no server that could hold your files.</p>
-    <!-- When the apps go live, replace the .soon pills (here and in .cta) with:
-         <a href="https://apps.apple.com/app/idXXXXXXXXXX"><img src="assets/appstore-badge.svg" alt="Download on the App Store" style="height:54px"></a>
-         <a href="https://play.google.com/store/apps/details?id=app.docsly.app"><img src="assets/googleplay-badge.png" alt="Get it on Google Play" style="height:54px"></a> -->
-    <span class="soon">Coming soon to the App&nbsp;Store and Google&nbsp;Play</span>
+    <a class="badge" href="https://apps.apple.com/app/id6762974333"><img src="assets/appstore-badge.svg" alt="Download Docsly on the App Store" width="162" height="54"></a>
+    <p class="also">Also on <a href="https://play.google.com/store/apps/details?id=app.docsly.app">Google&nbsp;Play</a></p>
   </div>
 </header>
 
@@ -113,7 +113,8 @@
 </section>
 
 <div class="cta">
-  <span class="soon">Coming soon to the App&nbsp;Store and Google&nbsp;Play</span>
+  <a class="badge" href="https://apps.apple.com/app/id6762974333"><img src="assets/appstore-badge.svg" alt="Download Docsly on the App Store" width="162" height="54"></a>
+  <p class="also">Also on <a href="https://play.google.com/store/apps/details?id=app.docsly.app">Google&nbsp;Play</a></p>
 </div>
 
 <footer>
